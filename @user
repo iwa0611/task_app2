@@ -1,0 +1,14 @@
+
+[1mFrom:[0m /home/ec2-user/environment/task_app2/app/views/shared/_user.html.erb:11 #<Class:0x00007f2ac94dbf48>#_app_views_shared__user_html_erb___1414351849195779946_69910872048940:
+
+     [1;34m6[0m:     </a>
+     [1;34m7[0m:       <input class="fas search font" type="search" placeholder="&#xf3c5; エリア">
+     [1;34m8[0m:       <input class="fas search font" type="search" placeholder="&#xf002; キーワード">
+     [1;34m9[0m:   </div>
+    [1;34m10[0m:   <div class="header_right">
+ => [1;34m11[0m:     <% binding.pry %>
+    [1;34m12[0m:     <%= @user.name %>
+    [1;34m13[0m:     <img src="" alt="メニュー">
+    [1;34m14[0m:   </div>
+    [1;34m15[0m: </div>
+

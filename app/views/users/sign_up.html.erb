@@ -1,0 +1,30 @@
+<div class="container form">
+  <div class="form_frame">
+    <p>新しいアカウント</p>
+    
+    <%= render"shared/error",sign:@user %>
+    
+    <div class="form_inner">
+      <%= form_with model: @user do |f| %>
+        <div class="form_field">
+          <div class="icon"></div>
+          <%= f.text_field :name, placeholder: "ユーザー名" %>
+        </div>
+        <div class="form_field">
+          <div class="icon"></div>
+          <%= f.email_field :email, placeholder: "メールアドレス" %>
+        </div>
+        <div class="form_field">
+          <div class="icon"></div>
+          <%= f.password_field :password, placeholder: "パスワード" %>
+        </div>
+        <div class="form_field">
+          <div class="icon"></div>
+          <%= f.password_field :password, placeholder: "パスワード確認" %>
+        </div>
+        <%= f.submit "新しいアカウントを作成" %>
+      <% end %>
+      <%= link_to"既にアカウントをお持ちの方はログインへ","sign_in" %>
+    </div>
+  </div>    
+</div>

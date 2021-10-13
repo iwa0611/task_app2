@@ -1,0 +1,19 @@
+<div class="container form">
+  <div class="form_frame">
+    <p>ログイン</p>
+    <div class="form_inner">
+      <%= form_for(:session, url: login_path) do |f| %>
+      　<div class="form_field">
+          <div class="icon"></div>
+          <%= f.email_field :email, placeholder: "メールアドレス" %>
+        </div>
+        <div class="form_field">
+          <div class="icon"></div>
+          <%= f.password_field :password_digest, placeholder: "パスワード" %>
+        </div>
+        <%= f.submit "ログイン" %>
+      <% end %>
+      <%= link_to"新しいアカウントを作成","sign_up" %>
+    </div>
+  </div>    
+</div>
