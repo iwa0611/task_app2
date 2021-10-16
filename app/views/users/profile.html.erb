@@ -1,7 +1,7 @@
 <div class="flash_message">
   <div class="notice">
     <% if flash[:notice] %>
-      <%= flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
     <% end %>
   </div>
 </div>
@@ -10,10 +10,10 @@
     <div class="side_nav_pc">
       <ul>
         <li>
-          <a href="">アカウント</a>
-        </li>
-        <li>
-          <a href="">プロフィール</a>
+          <a href="/users/account">アカウント</a>
+        </li >
+        <li class="select_menu">
+          <a href="/users/profile">プロフィール</a>
         </li>
       </ul>
     </div>
@@ -34,12 +34,14 @@
             <h5>プロフィール</h5>
           </div>
         </div>
-        <%= form_with model: @user do |f| %>
+        <%= form_with model: @user, local: true do |f| %>
           <div class="user_view_content">
             <div class="profile">
               <div class="offset">
                 <div class="icon_box">
-                  <img class="user_icon" src="" alt="icon">
+                  <div class="user_icon">
+                    <%= image_tag "#{@user.image}" %>
+                  </div>
                 </div>
               </div>
             </div>

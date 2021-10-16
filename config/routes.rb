@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'users/sign_up' => 'users#sign_up'
   get 'users/sign_in_page'
   get 'users/profile' => 'users#profile'
+  get 'users/account' => 'users#account'
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete '/login' => 'sessions#destroy'

@@ -1,0 +1,46 @@
+<div class="container_field">
+  <div class="profile">
+    <div class="side_nav_pc">
+      <ul>
+        <li class="select_menu">
+          <a href="/users/account">アカウント</a>
+        </li >
+        <li>
+          <a href="/users/profile">プロフィール</a>
+        </li>
+      </ul>
+    </div>
+    <div class="top_nav_sp">
+      <ul>
+        <li>
+          <a href="">アカウント</a>
+        </li>
+        <li>
+          <a href="">プロフィール</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user_view">
+      <div class="user_view_box">
+        <div class="user_view_content">
+          <div class="profile">
+            <h5>アカウント</h5>
+          </div>
+        </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class="require">メールアドレス</label>
+              <%= @user.email %>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "require">パスワード</label>
+              <%= @user.password_digest %>
+            </div>
+          </div>
+        <a>編集</a>
+      </div>
+    </div>
+  </div>
+</div>

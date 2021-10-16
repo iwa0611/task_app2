@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     @users = User.all
   end
   
+  def account
+    @user = User.find_by(id: session[:user_id])
+  end
+  
   def sign_in
     @user = User.find(params[:emai])
     if @user
@@ -31,11 +35,11 @@ class UsersController < ApplicationController
   def edit
   end
   
+
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by(id: session[:user_id])
     if current_user == @user
-      binding.pry
-      if @user.update(params.require(:user).permit(:name,:introduction,:image))
+      if @user.update(params.require(:user).permit(:name, :introduction, :image))
         flash[:notice] = "更新しました"
         redirect_to "/users/profile"
       else

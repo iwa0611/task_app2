@@ -35,6 +35,7 @@ group :development, :test do
   gem 'rails-i18n'
   gem 'pry-rails'
   gem 'bcrypt'
+  gem 'carrierwave'
 end
 
 group :development do

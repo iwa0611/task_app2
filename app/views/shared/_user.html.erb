@@ -7,8 +7,25 @@
       <input class="fas search font" type="search" placeholder="&#xf3c5; エリア">
       <input class="fas search font" type="search" placeholder="&#xf002; キーワード">
   </div>
-  <div class="header_right">
-    <div class="user_name"><!--@user.name--></div>
-    <img src="" alt="メニュー">
+  <div class="header_right login_user">
+    <div class="user user_name"><%= "#{@current_user.name}" %></div>
+    <div class="user user_icon" id="user_menu" ><%= image_tag "#{@current_user.image}" %></div>
+  </div>
+  <div id="navi">
+      <p><%= link_to"ルーム登録","/" %></p>
+      <p><%= link_to"予約済みのルーム一覧","/" %></p>
+      <p><%= link_to"登録済みのルーム一覧","/" %></p>
+      <p><%= link_to"設定","/users/account" %></p>
+      <p><%= link_to"ログアウト","/login",method: :delete %></p>
   </div>
 </div>
+
+<script>
+  $(function(){
+    $('#navi > p').hide();
+    $('#user_menu').click(function(){
+    // 引数には開閉する速度を指定します
+    $('#navi > p').slideToggle('fast');
+  });
+  });
+</script>

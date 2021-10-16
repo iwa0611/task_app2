@@ -99,6 +99,22 @@ input[type=submit] {
   display: inline-block;
 }
 
+.side_nav_pc a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.menu_account a:hover {
+  color: #4a90e2;
+}
+
+.select_menu a {
+  color: #4a90e2;
+  border-right: 3px solid #4a90e2;
+  padding-right: 10px;
+}
+
 .user_view {
   background: #f6f8f9;
   border-left: 2px solid green;
@@ -124,7 +140,7 @@ input[type=submit] {
   margin-left: 50%;
 }
 
-.user_icon {
+.user_icon img {
   width: 65px;
   height: 65px;
   object-fit: cover;
@@ -151,4 +167,9 @@ input[type=submit] {
   border-radius: 5px;
   padding: 4px;
   margin: 0 5px;
+}
+
+.notice {
+  background: yellow;
+  text-align: center;
 }

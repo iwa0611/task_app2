@@ -74,16 +74,34 @@ footer {
 
 
 .header_right {
-  display: inline-block;
+  display: flex;
   float: right;
   position: absolute;
-  right: 17px;
-  top: 23px;
+  right: 40px;
+  top: 20px;
+}
+
+.login_user {
+  top: 1px;
+}
+
+#navi {
+  position: absolute;
+  right: 0;
+  top: 70px;
+  background: #fff;
+  text-decoration: none;
+}
+
+#navi p {
+  padding-top: 10px;
+  padding-bottom: 0;
 }
 
 .user_name {
   color: #fff;
-  display: inline-block;
+  margin-top: 22px;
+  margin-right: 10px;
 }
 
 .button_css {
