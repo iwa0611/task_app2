@@ -2,14 +2,14 @@
   <div class="form_frame">
     <p>ログイン</p>
     <div class="form_inner">
-      <%= form_for(:session, url: login_path) do |f| %>
+      <%= form_with scope: :session, url: login_path do |f| %>
       　<div class="form_field">
           <div class="icon"></div>
           <%= f.email_field :email, placeholder: "メールアドレス" %>
         </div>
         <div class="form_field">
           <div class="icon"></div>
-          <%= f.password_field :password_digest, placeholder: "パスワード" %>
+          <%= f.password_field :password, placeholder: "パスワード" %>
         </div>
         <%= f.submit "ログイン" %>
       <% end %>

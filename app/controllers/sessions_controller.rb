@@ -3,9 +3,10 @@ class SessionsController < ApplicationController
   end
   
   def create # sessionの中にemailが入っているparams{session:{email}}
-    user = User.find_by(email: params[:session][:email])
-    if user && user.authenticate(params[:session][:password_digest])
-      log_in user
+    @user = User.find_by(email: params[:session][:email])
+    if @user && @user.authenticate(params[:session][:password])
+      log_in @user
+      flash[:notice] = "ログインしました"
       redirect_to "/users/profile"
     else
       render "users/sign_in_page"

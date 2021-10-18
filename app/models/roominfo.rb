@@ -1,2 +1,0 @@
-class Roominfo < ApplicationRecord
-end

@@ -12,11 +12,11 @@
     <div class="user user_icon" id="user_menu" ><%= image_tag "#{@current_user.image}" %></div>
   </div>
   <div id="navi">
-      <p><%= link_to"ルーム登録","/" %></p>
-      <p><%= link_to"予約済みのルーム一覧","/" %></p>
-      <p><%= link_to"登録済みのルーム一覧","/" %></p>
-      <p><%= link_to"設定","/users/account" %></p>
-      <p><%= link_to"ログアウト","/login",method: :delete %></p>
+      <p><%= link_to"ルーム登録","/rooms/new",class:"js_menu" %></p>
+      <p><%= link_to"予約済みのルーム一覧","/reserves/reserved",class:"js_menu" %></p>
+      <p><%= link_to"登録済みのルーム一覧","/reserves/post",class:"js_menu" %></p>
+      <p><%= link_to"設定","/users/account",class:"js_menu" %></p>
+      <p><%= link_to"ログアウト","/login",method: :delete,class:"js_menu" %></p>
   </div>
 </div>
 

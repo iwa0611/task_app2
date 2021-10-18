@@ -52,7 +52,7 @@
   width: 300px;
 }
 
-input[type=submit] {
+input[type=submit] , .edit_button {
   color: #fff;
   background: #4a90e2;
   border-radius: 5px;
@@ -140,7 +140,7 @@ input[type=submit] {
   margin-left: 50%;
 }
 
-.user_icon img {
+.user_icon, .user_icon img {
   width: 65px;
   height: 65px;
   object-fit: cover;
@@ -172,4 +172,21 @@ input[type=submit] {
 .notice {
   background: yellow;
   text-align: center;
+}
+
+.edit_button {
+  padding: 10px 30px;
+  text-decoration: none;
+}
+
+.back {
+  border: 1px solid #000;
+  padding: 12px 162px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #4a90e2;
+}
+
+.edit_form input, textarea {
+  margin-bottom: 20px;
 }

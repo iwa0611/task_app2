@@ -9,21 +9,15 @@
   <div class="profile">
     <div class="side_nav_pc">
       <ul>
-        <li>
-          <a href="/users/account">アカウント</a>
-        </li >
         <li class="select_menu">
-          <a href="/users/profile">プロフィール</a>
-        </li>
+          <a href="/users/account">基本情報</a>
+        </li >
       </ul>
     </div>
     <div class="top_nav_sp">
       <ul>
         <li>
-          <a href="">アカウント</a>
-        </li>
-        <li>
-          <a href="">プロフィール</a>
+          <a href="">基本情報</a>
         </li>
       </ul>
     </div>
@@ -31,44 +25,43 @@
       <div class="user_view_box">
         <div class="user_view_content">
           <div class="profile">
-            <h5>プロフィール</h5>
+            <h5>ルーム情報登録</h5>
           </div>
         </div>
-        <%= form_with model: @user, local: true do |f| %>
+        <%= form_with url: @room, local: true do |f| %>
           <div class="user_view_content">
             <div class="profile">
-              <div class="offset">
-                <div class="icon_box">
-                  <div class="user_icon">
-                    <% if @user.image %>
-                      <%= image_tag "#{@user.image}" %>
-                    <% end %>  
-                  </div>
-                </div>
-              </div>
+              <label class="require">ルーム名</label>
+              <%= f.text_field :room_name, placeholder:"ルーム名を入力" %>
             </div>
           </div>
           <div class="user_view_content">
             <div class="profile">
-              <label class="require">アイコン画像</label>
+              <label class="require">ルーム紹介</label>
+              <%= f.text_area :intro, placeholder:"ルーム説明を入力" %>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "require">料金</label>
+              <%= f.number_field :price, placeholder:"１日あたりの料金を入力" %>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "require">住所</label>
+              <%= f.text_field :address, placeholder:"住所を入力" %>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "require">ルーム画像</label>
               <%= f.file_field :image %>
             </div>
           </div>
           <div class="user_view_content">
             <div class="profile">
-              <label class="require">名前</label>
-              <%= f.text_field :name %>
-            </div>
-          </div>
-          <div class="user_view_content">
-            <div class="profile">
-              <label class= "require">自己紹介</label>
-              <%= f.text_area :introduction, placeholder:"自己紹介を入力"%>
-            </div>
-          </div>
-          <div class="user_view_content">
-            <div class="profile">
-              <%= f.submit"更新" %>
+              <%= f.submit"登録" %>
             </div>
           </div>
         <% end %>
