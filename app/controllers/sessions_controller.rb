@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       log_in @user
       flash[:notice] = "ログインしました"
-      redirect_to "/users/profile"
+      redirect_to "/"
     else
       render "users/sign_in_page"
     end

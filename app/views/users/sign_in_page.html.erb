@@ -1,8 +1,11 @@
 <div class="container form">
   <div class="form_frame">
     <p>ログイン</p>
+    
+    <%= render"shared/error",error: @user %>
+    
     <div class="form_inner">
-      <%= form_with scope: :session, url: login_path do |f| %>
+      <%= form_with scope: :session, url: login_path, local: true do |f| %>
       　<div class="form_field">
           <div class="icon"></div>
           <%= f.email_field :email, placeholder: "メールアドレス" %>

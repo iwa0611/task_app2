@@ -1,0 +1,32 @@
+<div class="flash_message">
+  <div class="notice">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/error",error:@room %>
+
+<div class="container_field">
+  <div class="user_view">
+    <div class="user_view_box">
+      <div class="update_content">
+        <p>予約した部屋</p>
+        <%= @room.room_name %>
+      </div>
+      <div class="update_content">
+        <p>開始日</p>
+        <%= @room.start_date %>
+      </div>
+      <div class="update_content">
+        <p>終了日</p>
+        <%= @room.end_date %>
+      </div>
+      <div class="update_content">
+        <p>価格</p>
+        <%= @room.total_price %>
+      </div>
+    </div>
+  </div>
+</div>

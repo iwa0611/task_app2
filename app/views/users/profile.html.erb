@@ -7,7 +7,7 @@
 </div>
 <div class="container_field">
   <div class="profile">
-    <div class="side_nav_pc">
+    <div class="user_nav side_nav_pc d-none">
       <ul>
         <li>
           <a href="/users/account">アカウント</a>
@@ -17,13 +17,13 @@
         </li>
       </ul>
     </div>
-    <div class="top_nav_sp">
+    <div class="user_nav header_nav_sp d-none-sp">
       <ul>
         <li>
-          <a href="">アカウント</a>
+          <a href="/users/account">アカウント</a>
         </li>
-        <li>
-          <a href="">プロフィール</a>
+        <li class="select_menu">
+          <a href="/users/profile">プロフィール</a>
         </li>
       </ul>
     </div>
@@ -51,19 +51,19 @@
           <div class="user_view_content">
             <div class="profile">
               <label class="require">アイコン画像</label>
-              <%= f.file_field :image %>
+              <div class="require1"><%= f.file_field :image %></div>
             </div>
           </div>
           <div class="user_view_content">
             <div class="profile">
               <label class="require">名前</label>
-              <%= f.text_field :name %>
+              <div class="require1"><%= f.text_field :name %></div>
             </div>
           </div>
           <div class="user_view_content">
             <div class="profile">
               <label class= "require">自己紹介</label>
-              <%= f.text_area :introduction, placeholder:"自己紹介を入力"%>
+              <div class="require1"><%= f.text_area :introduction, placeholder:"自己紹介を入力"%></div>
             </div>
           </div>
           <div class="user_view_content">

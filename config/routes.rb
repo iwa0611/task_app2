@@ -10,8 +10,11 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete '/login' => 'sessions#destroy'
+  post '/reserves' => 'reserves#create'
   get 'reserves/reserved' => 'reserves#reserved'
-  get 'reserves/post' => 'reserves#post'
+  get 'rooms/posts' => 'rooms#posts'
+  get 'rooms/search' => 'rooms#search'
+  get 'reserves/new' => 'reserves#new'
   
   resources :users
   resources :reserves

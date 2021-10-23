@@ -4,8 +4,11 @@
       <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"
           alt="site_logo">
     </a>
-      <input class="fas search font" type="search" placeholder="&#xf3c5; エリア">
-      <input class="fas search font" type="search" placeholder="&#xf002; キーワード">
+      <%= form_with url: "/rooms/search", method: :get, local: true do |f| %>
+        <%= f.text_field :area, placeholder: "\uf3c5 エリア", class:"fas search font d-none" %>
+        <%= f.text_field :keyword, placeholder: "\uf3c5 キーワード", class:"fas search font d-none" %>
+        <%= f.submit"", class:"search_sub" %>
+      <% end %>
   </div>
   <div class="header_right login_user">
     <div class="user user_name"><%= "#{@current_user.name}" %></div>
@@ -14,7 +17,7 @@
   <div id="navi">
       <p><%= link_to"ルーム登録","/rooms/new",class:"js_menu" %></p>
       <p><%= link_to"予約済みのルーム一覧","/reserves/reserved",class:"js_menu" %></p>
-      <p><%= link_to"登録済みのルーム一覧","/reserves/post",class:"js_menu" %></p>
+      <p><%= link_to"登録済みのルーム一覧","/rooms/posts",class:"js_menu" %></p>
       <p><%= link_to"設定","/users/account",class:"js_menu" %></p>
       <p><%= link_to"ログアウト","/login",method: :delete,class:"js_menu" %></p>
   </div>

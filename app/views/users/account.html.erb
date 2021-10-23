@@ -7,7 +7,7 @@
 </div>
 <div class="container_field">
   <div class="profile">
-    <div class="side_nav_pc">
+    <div class="user_nav side_nav_pc d-none">
       <ul>
         <li class="select_menu">
           <a href="/users/account">アカウント</a>
@@ -17,13 +17,13 @@
         </li>
       </ul>
     </div>
-    <div class="top_nav_sp">
+    <div class="user_nav header_nav_sp d-none-sp">
       <ul>
-        <li>
-          <a href="">アカウント</a>
+        <li class="select_menu">
+          <a href="/users/account">アカウント</a>
         </li>
         <li>
-          <a href="">プロフィール</a>
+          <a href="/users/profile">プロフィール</a>
         </li>
       </ul>
     </div>
@@ -36,14 +36,14 @@
         </div>
           <div class="user_view_content">
             <div class="profile">
-              <label class="require">メールアドレス</label>
-              <%= @user.email %>
+              <label class="col_md_3">メールアドレス</label>
+              <div class="col_md_4"><%= @user.email %></div>
             </div>
           </div>
           <div class="user_view_content">
             <div class="profile">
-              <label class= "require">パスワード</label>
-              <%= @user.password_digest %>
+              <label class= "col_md_3">パスワード</label>
+              <div class="col_md_4"><%= @user.password_digest %></div>
             </div>
           </div>
         <div class="user_view_content">

@@ -1,7 +1,14 @@
 class RoomsController < ApplicationController
   
-  def index
-    @rooms = Room.all
+  def search
+    if params[:area].present? #!blank?と同じ意味。空ならfalse
+        @rooms = Room.where("address LIKE ?", "%#{params[:area]}%")
+    elsif params[:keyword].present?
+        @rooms = Room.where("intro LIKE ?", "%#{params[:keyword]}%")
+             .or(Room.where("room_name LIKE ?", "%#{params[:keyword]}%"))
+    else
+      @rooms = Room.all
+    end
   end
   
   def new
@@ -14,19 +21,21 @@ class RoomsController < ApplicationController
       flash[:notice] = "登録完了"
       redirect_to "/rooms/#{@room.id}"
     else
-      render "rooms"
+      flash[:notice] = "登録失敗"
+      render "rooms/new"
     end
   end
   
   def show
     @user = User.find_by(id: session[:user_id])
-    @room = Room.find_by(params[:id])
+    @room = Room.find_by(id: params[:id])
   end
 
   def edit
   end
-
-  def post
+  
+  def posts
+    @rooms = Room.all
   end
   
   private

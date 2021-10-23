@@ -26,16 +26,6 @@ class UsersController < ApplicationController
     end
   end
   
-  def sign_in
-    @user = User.find(params[:emai])
-    if @user 
-      flash[:notice] = "ログインしました"
-      redirect_to "/"
-    else
-      render "sign_in"
-    end
-  end
-  
   def sign_up
     @user = User.new
   end
@@ -44,6 +34,7 @@ class UsersController < ApplicationController
     @user = User.new(params_user)
     if @user.save && params[:password] == params[:check_password]
       log_in @user
+      flash[:notice] = "アカウント作成しました"
       redirect_to "/users/profile"
     else
       flash[:notice] = "アカウント作成に失敗しました"

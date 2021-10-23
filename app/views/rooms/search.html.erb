@@ -1,0 +1,27 @@
+<div class="container_field">
+  <h4 class="pb4">検索結果：<%= @rooms.count %></h4>
+  <% if params[:area].present? %>
+    <h4 class="pb4"><%= "検索ワード：#{params[:area]}" %></h4>
+  <% end %>  
+  <% if params[:keyword].present? %>
+    <h4 class="pb4"><%= "検索ワード：#{params[:keyword]}" %></h4>
+  <% end %> 
+    <div class="room_box">
+      <% @rooms.each do |room| %>
+      <div class="col">
+        <div class="room_flame_inner">
+          <a href="<%= "#{room.id}" %>">
+            <div class="room_image_out">
+              <%= image_tag "#{room.image}", class:"search_room_image" %>
+            </div>
+          </a>
+            <div class="room_profile">
+              <p class="room_profile_name"><%= link_to"#{room.room_name}" %></p>
+              <p class="room_profile_city"><%= link_to"#{room.address}" %></p>
+              <p class="room_profile_price"><%= link_to"¥#{room.total_price}" %></p>
+            </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+</div>

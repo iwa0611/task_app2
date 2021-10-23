@@ -9,7 +9,7 @@
   <div class="form_frame">
     <p>新しいアカウント</p>
     
-    <%= render"shared/error",sign:@user %>
+    <%= render"shared/error",error: @user %>
     
     <div class="form_inner">
       <%= form_with url: @user do |f| %>

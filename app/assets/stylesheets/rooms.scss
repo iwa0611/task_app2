@@ -1,8 +1,25 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@media (min-width: 768px) {
+.container_room {
+  max-width: 720px;
+}
+}
+
+@media (min-width: 992px) {
+.container_room {
+  max-width: 960px;
+}
+}
+
+@media (min-width: 1200px) {
 .container_room {
   max-width: 1140px;
+}
+}
+
+.container_room {
   width: 100%;
   height: 100%;
   padding: 0 15px;
@@ -15,13 +32,21 @@
   display: flex;
 }
 
-.col {
+.col, .col2 {
   position: relative;
   width: 100%;
   height: auto;
   padding: 0 15px;
+}
+
+.col1 {
   flex: 0 0 66.67%;
   max-width: 66.67%;
+}
+
+.col2 {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
 }
 
 .room_show_image {
@@ -39,3 +64,146 @@
   padding: 10px;
 }
 
+.room_show_profile {
+  padding: 15px;
+}
+
+.room_show_profile_name {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0;
+  line-height: 18px;
+}
+
+.room_show_profile_address {
+  font-size: 14px;
+}
+
+.room_show_detile_content {
+  font-size: 16px;
+  line-height: 30px;
+  padding: 30px 10px;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+
+.room_show_nav, .reserves_new_nav {
+  padding: 20px;
+  border: 1px solid #eaedef;
+}
+
+.room_show_date_select {
+  padding: 15px 0;
+}
+
+// ルーム一覧 //
+.container_field h4 {
+  margin-left: 20px;
+}
+
+.title {
+  display: flex;
+  border-top: 1px solid #eaedef;
+  border-bottom: 1px solid #eaedef;
+}
+
+.title p {
+  margin-left: 40px;
+  margin-right: 60px;
+}
+.post_list {
+  display: flex;
+}
+
+.post_list li {
+  width: 20%;
+  max-height: 25%;
+  border-bottom: 1px solid #eaedef;
+  word-break: break-all;
+}
+
+.post_img {
+  width: 200px;
+}
+
+.post_list img {
+  width: 50%;
+  object-fit: cover;
+  margin: 0;
+}
+
+#created {
+  margin-left: 10%;
+}
+
+// ルーム検索 //
+.room_box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 576px) {
+.col {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+}
+
+@media (min-width: 992px) {
+.col {
+  flex: 0 0 33%;
+  max-width: 33%;
+}
+}
+
+@media (min-width: 1200px) {
+.col {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+}
+
+.room_flame_inner {
+  border: 1px solid #e2e2e2;
+  margin-bottom: 10px;
+}
+
+.room_image_out {
+  position: relative;
+  width: 100%;
+  background: #F6F8F9;
+  height: 200px;
+}
+
+.search_room_image {
+  width: 100%;
+  height: 180px;
+  position: absolute;
+  top: 20px;
+  object-fit: cover;
+}
+
+.room_profile {
+  width: 100%;
+  padding: 15px;
+}
+
+.room_profile a {
+  color: #909090;
+}
+
+.room_profile_name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #909090;
+}
+
+.room_profile_city {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.room_profile_price {
+  text-align: right;
+}
