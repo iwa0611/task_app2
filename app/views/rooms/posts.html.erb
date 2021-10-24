@@ -1,0 +1,20 @@
+<div class="container_field">
+  <h4>登録済みルーム一覧</h4>
+  <div class="title">
+    <p>ルーム画像</p>
+    <p>ルーム名</p>
+    <p>ルーム紹介</p>
+    <p id="price">ルーム料金</p>
+    <p id="created">作成日</p>
+  </div>
+  <% @rooms.each do |room| %>
+    <ul class="post_list">
+      <li class="post_img"><%= image_tag "#{room.image}" %></li>
+      <li><%= link_to"#{room.room_name}", "/rooms/#{room.id}" %></li>
+      <li><%= room.intro%></li>
+      <li><%= room.price %></li>
+      <li><%= room.created_at %></li>
+      <li><%= room.user_id %></li>
+    </ul>
+  <% end %>
+</div>

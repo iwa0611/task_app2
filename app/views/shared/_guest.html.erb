@@ -1,0 +1,22 @@
+<div class="header_items">
+  <div class="header_left">
+    <a href="/">
+      <img src="https://presite-potepancamp-rails-02.herokuapp.com/assets/logo.png"
+          alt="site_logo">
+    </a>
+      <%= form_with url: "/rooms/search", method: :get, local: true, id: "form1" do |f| %>
+        <%= f.text_field :area, placeholder: "\uf3c5 エリア", class:"fas search font d-none" %>
+        <%= f.text_field :keyword, placeholder: "\uf3c5 キーワード", class:"fas search font d-none" %>
+        <%= f.submit"", class:"search_sub" %>
+      <% end %>
+  </div>
+  <div class="header_right">
+    <a href="/users/sign_in_page">
+      <button class="login button_css">ログイン</button>
+    </a>
+    <a href="/users/sign_up">
+      <button class="register">登録する</button>
+    </a>
+  </div>
+</div>
+

@@ -1,0 +1,78 @@
+<div class="flash_message">
+  <div class="notice">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
+</div>
+<div class="container_field">
+  <div class="profile">
+    <div class="user_nav side_nav_pc d-none">
+      <ul>
+        <li>
+          <a href="/users/account">アカウント</a>
+        </li >
+        <li class="select_menu">
+          <a href="/users/profile">プロフィール</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user_nav header_nav_sp d-none-sp">
+      <ul>
+        <li>
+          <a href="/users/account">アカウント</a>
+        </li>
+        <li class="select_menu">
+          <a href="/users/profile">プロフィール</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user_view">
+      <div class="user_view_box">
+        <div class="user_view_content">
+          <div class="profile">
+            <h5>プロフィール</h5>
+          </div>
+        </div>
+        <%= form_with model: @user, local: true do |f| %>
+          <div class="user_view_content">
+            <div class="profile">
+              <div class="offset">
+                <div class="icon_box">
+                  <div class="user_icon">
+                    <% if @user.image %>
+                      <%= image_tag "#{@user.image}" %>
+                    <% end %>  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class="require">アイコン画像</label>
+              <div class="require1"><%= f.file_field :image %></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class="require">名前</label>
+              <div class="require1"><%= f.text_field :name %></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "require">自己紹介</label>
+              <div class="require1"><%= f.text_area :introduction, placeholder:"自己紹介を入力"%></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <%= f.submit"更新" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

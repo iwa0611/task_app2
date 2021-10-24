@@ -1,0 +1,45 @@
+<div class="flash_message">
+  <div class="notice">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
+</div>
+<div class="container_room room_show">
+  <div class="col1">
+    <%= image_tag "#{@room.image}", class:"room_show_image" %>
+    <div class="room_show_detile">
+      <div class="room_show_detile_icon">
+        <a>
+          <%= image_tag "#{@user.image}", class:"user_icon" %>
+        </a>
+      </div>
+      <div class="room_show_profile">
+        <p class="room_show_profile_name">ss</p>
+        <p class="room_show_profile_address">ss</p>
+      </div>
+    </div>
+    <div class="room_show_detile_content">bbb</div>
+  </div>
+  <div class="col2">
+    <div class="room_show_nav">
+      <h5 class="price_icon">
+        <%= "￥#{@room.price}/day" %>
+      </h5>
+      <div class="room_show_date_select">
+        <%= form_with url: "/reserves/new", local: true, method: :get do |f| %>
+          <%= f.hidden_field :id, value: @room.id %>
+          <%= f.hidden_field :user_id, value: @user.id %>
+          <%= f.hidden_field :price, value: @room.price %>
+          <p>開始日</p>
+          <%= f.date_field :start_date %>
+          <p>終了日</p></p>
+          <%= f.date_field :end_date %>
+          <p>予約人数</p>
+          <%= f.number_field :person_num %>
+          <%= f.submit"予約する" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

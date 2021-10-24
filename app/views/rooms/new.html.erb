@@ -1,0 +1,71 @@
+<div class="flash_message">
+  <div class="notice">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
+</div>
+<div class="container_field">
+  <div class="profile">
+    <div class="user_nav side_nav_pc d-none">
+      <ul>
+        <li class="select_menu">
+          <a href="/users/account">基本情報</a>
+        </li >
+      </ul>
+    </div>
+    <div class="user_nav header_nav_sp d-none-sp">
+      <ul>
+        <li class="select_menu">
+          <a href="/users/account">基本情報</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user_view">
+      <div class="user_view_box">
+        <div class="user_view_content">
+          <div class="profile">
+            <h5>ルーム情報登録</h5>
+          </div>
+        </div>
+        <%= form_with url: @room, local: true do |f| %>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class="require">ルーム名</label>
+              <div class="require1"><%= f.text_field :room_name, placeholder:"ルーム名を入力" %></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class="require">ルーム紹介</label>
+              <div class="require1"><%= f.text_area :intro, placeholder:"ルーム説明を入力" %></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "require">料金</label>
+              <div class="require1"><%= f.number_field :price, placeholder:"１日あたりの料金を入力" %></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "require">住所</label>
+              <div class="require1"><%= f.text_field :address, placeholder:"住所を入力" %></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "require">ルーム画像</label>
+              <div class="require1"><%= f.file_field :image %></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <%= f.submit"登録" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

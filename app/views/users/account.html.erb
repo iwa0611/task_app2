@@ -1,0 +1,55 @@
+<div class="flash_message">
+  <div class="notice">
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+  </div>
+</div>
+<div class="container_field">
+  <div class="profile">
+    <div class="user_nav side_nav_pc d-none">
+      <ul>
+        <li class="select_menu">
+          <a href="/users/account">アカウント</a>
+        </li >
+        <li>
+          <a href="/users/profile">プロフィール</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user_nav header_nav_sp d-none-sp">
+      <ul>
+        <li class="select_menu">
+          <a href="/users/account">アカウント</a>
+        </li>
+        <li>
+          <a href="/users/profile">プロフィール</a>
+        </li>
+      </ul>
+    </div>
+    <div class="user_view">
+      <div class="user_view_box">
+        <div class="user_view_content">
+          <div class="profile">
+            <h5>アカウント</h5>
+          </div>
+        </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class="col_md_3">メールアドレス</label>
+              <div class="col_md_4"><%= @user.email %></div>
+            </div>
+          </div>
+          <div class="user_view_content">
+            <div class="profile">
+              <label class= "col_md_3">パスワード</label>
+              <div class="col_md_4"><%= @user.password_digest %></div>
+            </div>
+          </div>
+        <div class="user_view_content">
+          <%= link_to"編集","edit", class:"edit_button" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

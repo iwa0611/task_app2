@@ -1,0 +1,30 @@
+<div class="container reserves">
+  <div class="col3 offset1">
+    <div class="reserves_new_nav">
+      <h4 class="reserves_new_check_coment">予約内容確認</h4>
+      <h5 class="price_icon"><%= "#{@room.price}円/日" %></h5>
+      <div class="reserves_new_date_select">
+        <%= form_with url: "/reserves", local: true do |f| %>
+          <%= f.hidden_field :id, value: "#{@room.id}" %>
+          <%= f.hidden_field :user_id, value: "#{current_user.id}" %>
+          <p>開始日</p>
+          <%= f.text_field :start_date, value: "#{@room.start_date}", readonly: true %>
+          <p>終了日</p>
+          <%= f.text_field :end_date, value: "#{@room.end_date}", readonly: true %>
+          <p class="reserves_new_check_coment">使用日数：<%= "#{@room.start_date} ~ #{@room.end_date}" %></p>
+          <p class="reserves_new_check_coment">人数：<%= "#{@room.person_num}" %></p>
+          <p>合計金額</p>
+          <%= f.text_field :total_price, value: @room.price * @room.person_num, readonly: true %>
+          <p>上記内容でよろしければ「予約確定」を押してください</p>
+          <%= f.submit "予約確定" %>
+          <%= link_to"ルーム詳細に戻る", "/rooms/#{@room.id}", class:"back show" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+  
+  

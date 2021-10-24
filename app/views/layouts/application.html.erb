@@ -8,9 +8,20 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
-
+  
   <body>
-    <%= yield %>
+    <header>
+    <% if logged_in? %>
+      <%= render"shared/user" %>
+    <% else %>
+      <%= render"shared/guest" %>
+    <% end %>  
+    </header>
+      <%= yield %>
+    <footer>
+      <p>© 2020 POTEPAN.INC.</p>
+    </footer>
   </body>
 </html>

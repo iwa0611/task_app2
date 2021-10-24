@@ -1,0 +1,22 @@
+<div class="container form">
+  <div class="form_frame">
+    <p>ログイン</p>
+    
+    <%= render"shared/error",error: @user %>
+    
+    <div class="form_inner">
+      <%= form_with scope: :session, url: login_path, local: true do |f| %>
+      　<div class="form_field">
+          <div class="icon"></div>
+          <%= f.email_field :email, placeholder: "メールアドレス" %>
+        </div>
+        <div class="form_field">
+          <div class="icon"></div>
+          <%= f.password_field :password, placeholder: "パスワード" %>
+        </div>
+        <%= f.submit "ログイン" %>
+      <% end %>
+      <%= link_to"新しいアカウントを作成","sign_up" %>
+    </div>
+  </div>    
+</div>
